@@ -11,7 +11,7 @@ def sh_intellegesce(url, super_hero):
         top_list.setdefault((respond[x].get('powerstats').get('intelligence')), [])
         top_list[respond[x].get('powerstats').get('intelligence')].append(respond[x].get('name'))
 
-    return ''.join(top_list[max(top_list.keys())])
+    return ', '.join(top_list[max(top_list.keys())])
 pprint(sh_intellegesce(url, super_hero))
 
 
