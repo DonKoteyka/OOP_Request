@@ -7,12 +7,11 @@ def sh_intellegesce(url, super_hero):
     index_hero = [i for i in range(len(respond)) if respond[i].get('name') in super_hero]
     top_list = dict()
     for x in index_hero:
-        if
-        top_list.setdefault((respond[x].get('powerstats').get('intelligence')), [respond[x].get('name')])
+
+        top_list.setdefault((respond[x].get('powerstats').get('intelligence')), [])
         top_list[respond[x].get('powerstats').get('intelligence')].append(respond[x].get('name'))
 
-
-    return top_list
+    return ''.join(top_list[max(top_list.keys())])
 pprint(sh_intellegesce(url, super_hero))
 
 
